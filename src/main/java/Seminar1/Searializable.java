@@ -28,14 +28,14 @@ public class Searializable  {
         return animalList;
     }
 
-    public static void hardDeserializer(List<Animal> listAnimalm, String file) throws IOException, ClassNotFoundException {
+    public static void hardDeserializer(List<Animal> listAnimals, String file) throws IOException, ClassNotFoundException {
         Path path = Paths.get(file);
         try (DataOutputStream outputStream =
                      new DataOutputStream(Files.newOutputStream(path))) {
 
-            outputStream.writeInt(listAnimalm.size());
+            outputStream.writeInt(listAnimals.size());
 
-            for (Animal animal : listAnimalm) {
+            for (Animal animal : listAnimals) {
                 outputStream.writeUTF(animal.getName());
                 outputStream.writeInt(animal.getAge());
                 outputStream.writeUTF(animal.getTypeFood().name());

@@ -34,11 +34,11 @@ class SearializableTest {
                 new Animal("Shark", 40, TypeFood.GRASS, Arrays.asList(new Food("Grass", 100))),
                 new Animal("Vegan", 500, TypeFood.MEAT, Arrays.asList(new Food("meat", 50))));
         Searializable.serializer(animalList, "animalFile");
-        Searializable.serializer(testAnimalList,"testanimalFile");
+        Searializable.serializer(testAnimalList,"testFile");
         assertEquals(animalList, Searializable.deSerializer("animalFile"));
         assertNotEquals(testAnimalList,Searializable.deSerializer("animalFile"));
-        assertEquals(testAnimalList, Searializable.deSerializer("testanimalFile"));
-        assertNotEquals(animalList,Searializable.deSerializer("testanimalFile"));
+        assertEquals(testAnimalList, Searializable.deSerializer("testFile"));
+        assertNotEquals(animalList,Searializable.deSerializer("testFile"));
     }
 
     @Test
