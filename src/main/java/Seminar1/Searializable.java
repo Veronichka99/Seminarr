@@ -28,7 +28,7 @@ public class Searializable  {
         return animalList;
     }
 
-    public static void hardDeserializer(List<Animal> listAnimals, String file) throws IOException, ClassNotFoundException {
+    public static void hardSerializer(List<Animal> listAnimals, String file) throws IOException, ClassNotFoundException {
         Path path = Paths.get(file);
         try (DataOutputStream outputStream =
                      new DataOutputStream(Files.newOutputStream(path))) {
